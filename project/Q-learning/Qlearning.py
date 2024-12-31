@@ -118,6 +118,7 @@ class QLearningTrafficControl:
         traci.close()
         self.epsilon = max(self.min_epsilon, self.epsilon * self.epsilon_decay)
         return total_reward
+   
     def convergance(self, previous_Q, threshold):
         """
         Checks if the Q-table has converged by comparing the maximum absolute difference

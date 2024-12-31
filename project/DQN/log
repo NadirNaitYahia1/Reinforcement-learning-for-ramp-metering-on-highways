@@ -1,57 +1,26 @@
-***Starting server on port 55995 ***
+***Starting server on port 56230 ***
 Loading net-file from '../Simulation-with-Trafic-Light/sumo.net.xml' ... done (4ms).
-Loading additional-files from '../Simulation-with-Trafic-Light/sumo.add.xml' ... done (1ms).
+Loading additional-files from '../Simulation-with-Trafic-Light/sumo.add.xml' ... done (2ms).
 Loading done.
 Simulation started with time: 0.00.
-Warning: Vehicle 'morning_trucks_highway.6' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=62.00.
-Warning: Vehicle 'morning_cars_highway.113' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=209.00.
-Warning: Vehicle 'morning_cars_highway.204' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=376.00.
-Warning: Vehicle 'morning_cars_highway.211' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=4.50, severity=1.00, time=389.00.
-Warning: Vehicle 'morning_cars_highway.214' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=396.00.
-Warning: Vehicle 'morning_cars_highway.228' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=422.00.
-Warning: Vehicle 'morning_cars_highway.250' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=455.00.
-Warning: Vehicle 'morning_trucks_highway.67' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=608.00.
-Warning: Vehicle 'morning_trucks_highway.69' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=631.00.
-Warning: Vehicle 'morning_cars_highway.364' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=665.00.
-Warning: Vehicle 'morning_cars_highway.371' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=678.00.
-Warning: Vehicle 'morning_cars_highway.432' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=784.00.
-Warning: Vehicle 'morning_cars_highway.479' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=868.00.
-Warning: Vehicle 'morning_cars_highway.486' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=884.00.
-Warning: Vehicle 'morning_cars_highway.538' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=979.00.
-Warning: Vehicle 'morning_cars_highway.612' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1108.00.
-Warning: Vehicle 'morning_cars_highway.622' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1124.00.
-Warning: Vehicle 'morning_cars_highway.628' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1136.00.
-Warning: Vehicle 'morning_cars_highway.650' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1175.00.
-Warning: Vehicle 'morning_cars_highway.655' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1185.00.
-Warning: Vehicle 'morning_trucks_highway.133' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=1208.00.
-Warning: Vehicle 'morning_cars_highway.752' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1360.00.
-Warning: Vehicle 'morning_cars_highway.796' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=4.50, severity=1.00, time=1444.00.
-Warning: Vehicle 'morning_cars_highway.850' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1539.00.
-Warning: Vehicle 'morning_cars_highway.878' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1587.00.
-Warning: Vehicle 'morning_cars_highway.890' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1607.00.
-Warning: Vehicle 'morning_trucks_highway.182' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=1643.00.
-Warning: Vehicle 'morning_cars_highway.935' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=4.50, severity=1.00, time=1690.00.
-Warning: Vehicle 'morning_cars_highway.988' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1789.00.
-Warning: Vehicle 'morning_cars_highway.995' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=1797.00.
-Warning: Vehicle 'midday_cars_highway.1945' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=3740.00.
-Warning: Vehicle 'midday_trucks_highway.228' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=4055.00.
-Warning: Vehicle 'midday_trucks_highway.233' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=4094.00.
-Warning: Vehicle 'midday_cars_highway.2388' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=4149.00.
-Warning: Vehicle 'midday_cars_highway.2964' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=4666.00.
-Warning: Vehicle 'evening_highway.3' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=4706.00.
-Warning: Vehicle 'evening_trucks_highway.77' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=4790.00.
-Warning: Vehicle 'evening_trucks_highway.127' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=5135.00.
-Simulation ended at time: 8128.00.
-Reason: TraCI requested termination.
+Warning: Vehicle 'morning_cars_highway.58' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=112.00.
+Warning: Vehicle 'morning_cars_highway.74' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=4.50, severity=1.00, time=145.00.
+Warning: Vehicle 'morning_cars_highway.90' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=169.00.
+Warning: Vehicle 'morning_cars_highway.115' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=212.00.
+Warning: Teleporting vehicle 'morning_cars_highway.115'; collision with vehicle 'morning_ramp.25', lane='E1_2', gap=-6.42, time=213.00, stage=move.
+Warning: Vehicle 'morning_cars_highway.115' teleports beyond arrival edge 'E1', time=213.00.
+Warning: Vehicle 'morning_cars_highway.150' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=275.00.
+Simulation ended at time: 310.00.
 Performance:
- Duration: 98.58s
- TraCI-Duration: 90.71s
- Real time factor: 82.4508
- UPS: 1366.311625
+ Duration: 4.73s
+ TraCI-Duration: 4.19s
+ Real time factor: 65.5668
+ UPS: 943.950931
 Vehicles:
- Inserted: 5443
- Running: 0
- Waiting: 0
- Emergency Braking: 38
-DijkstraRouter answered 9419 queries and explored 2.00 edges on average.
-DijkstraRouter spent 0.02s answering queries (0.00ms on average).
+ Inserted: 243 (Loaded: 268)
+ Running: 15
+ Waiting: 25
+ Teleports: 1 (Collisions: 1)
+ Emergency Braking: 5
+DijkstraRouter answered 267 queries and explored 2.00 edges on average.
+DijkstraRouter spent 0.00s answering queries (0.00ms on average).
