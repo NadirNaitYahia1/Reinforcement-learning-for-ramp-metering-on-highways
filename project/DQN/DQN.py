@@ -159,7 +159,7 @@ def check_convergence(replay_buffer, threshold=0.01):
     return max_diff < threshold, max_diff
 
 def test_policy():
-    traci.start(["sumo-gui", "-c", "../simulation/sumo.sumocfg", "--start", "true", "--xml-validation", "never", "--log", "log", "--quit-on-end"])
+    traci.start(["sumo-gui", "-c", "../Simulation-with-Trafic-Light/sumo.sumocfg", "--start", "true", "--xml-validation", "never", "--log", "log", "--quit-on-end"])
     for _ in range(10):
         traci.simulation.step()
     state = get_state()
@@ -191,8 +191,7 @@ def test_policy():
     return total_reward, throughput, num_collisions, emergency_brakes
 
 # Simulation loop
-# Simulation loop
-for epoch in range(3):
+for epoch in range(2):
     traci.start(["sumo-gui", "-c", "../Simulation-with-Trafic-Light/sumo.sumocfg", "--start", "true", "--xml-validation", "never", "--log", "log", "--quit-on-end"])
     
     for _ in range(10):
@@ -223,6 +222,11 @@ for epoch in range(3):
     epsilon = max(min_epsilon, epsilon * epsilon_decay)
     traci.close()
     
+    # Save the model after each epoch
+    model_save_path = "dqn_model.pth"
+    torch.save(model.state_dict(), model_save_path)
+    print(f"Model saved at {model_save_path}")
+    
     # Test the trained policy
     total_reward, throughput, num_collisions, emergency_brakes = test_policy()
     print(f"Epoch {epoch}: Total Reward: {total_reward}, Throughput: {throughput}, Collisions: {num_collisions}, Emergency Brakes: {emergency_brakes}")
@@ -231,3 +235,9 @@ for epoch in range(3):
     is_converged, max_diff = check_convergence(replay_buffer)
     print(f"Epoch {epoch}: Converged: {is_converged}, Max Difference: {max_diff}")
 
+# After training and saving, you can load the model for testing
+# Load the saved model before running the test
+model = DQN(num_states, num_actions).to(device)
+model.load_state_dict(torch.load("dqn_model.pth"))
+model.eval()  # Set the model to evaluation mode
+print("Model loaded and ready for testing")

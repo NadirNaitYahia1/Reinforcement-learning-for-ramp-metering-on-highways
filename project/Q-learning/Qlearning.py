@@ -201,12 +201,12 @@ if __name__ == '__main__':
             break
         previous_Q = np.copy(QL_traffic_control.Q)
 
-    # Plot Rewards
-    plt.plot(rewards)
-    plt.xlabel("Epoch")
-    plt.ylabel("Total Reward")
-    plt.title("Reward Trend Over Time")
-    plt.show()
+        # Plot Rewards
+        plt.plot(rewards)
+        plt.xlabel("Epoch")
+        plt.ylabel("Total Reward")
+        plt.title("Reward Trend Over Time")
+        plt.show()
 
     # Test Policy
     print("Testing learned policy...")

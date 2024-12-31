@@ -1,17 +1,17 @@
-***Starting server on port 56618 ***
-Loading net-file from '../Simulation-withOut-Trafic-Light/sumo.net.xml' ... done (9ms).
-Loading additional-files from '../Simulation-withOut-Trafic-Light/sumo.add.xml' ... done (2ms).
+***Starting server on port 56748 ***
+Loading net-file from '../Simulation-with-Trafic-Light/sumo.net.xml' ... done (4ms).
+Loading additional-files from '../Simulation-with-Trafic-Light/sumo.add.xml' ... done (2ms).
 Loading done.
 Simulation started with time: 0.00.
-Simulation ended at time: 370.00.
+Error: tcpip::Socket::recvAndCheck @ recv: peer shutdown
+Quitting (on error).
+Simulation ended at time: 0.00.
 Performance:
- Duration: 2.16s
- TraCI-Duration: 1.54s
- Real time factor: 171.296
- UPS: 2185.648148
+ Duration: 0.45s
+ TraCI-Duration: 0.00s
+ Real time factor: 0
+ UPS: 0.000000
 Vehicles:
- Inserted: 256 (Loaded: 320)
- Running: 13
- Waiting: 64
-DijkstraRouter answered 293 queries and explored 2.00 edges on average.
-DijkstraRouter spent 0.00s answering queries (0.00ms on average).
+ Inserted: 0
+ Running: 0
+ Waiting: 0
