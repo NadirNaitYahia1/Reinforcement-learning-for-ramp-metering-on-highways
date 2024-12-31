@@ -1,59 +1,19 @@
-***Starting server on port 55897 ***
-Loading net-file from '../Simulation-with-Trafic-Light/sumo.net.xml' ... done (84ms).
-Loading additional-files from '../Simulation-with-Trafic-Light/sumo.add.xml' ... done (41ms).
+***Starting server on port 56209 ***
+Loading net-file from '../Simulation-with-Trafic-Light/sumo.net.xml' ... done (6ms).
+Loading additional-files from '../Simulation-with-Trafic-Light/sumo.add.xml' ... done (1ms).
 Loading done.
 Simulation started with time: 0.00.
-Warning: Vehicle 'morning_ramp.123' performs emergency braking on lane 'E2_0' with decel=9.00, wished=4.50, severity=1.00, time=637.00.
-Warning: Teleporting vehicle 'morning_ramp.345'; waited too long (yield), lane='E2_0', time=2100.00.
-Warning: Vehicle 'morning_ramp.345' teleports beyond arrival edge 'E1', time=2104.00.
-Warning: Teleporting vehicle 'morning_ramp.346'; waited too long (yield), lane='E2_0', time=2404.00.
-Warning: Vehicle 'morning_ramp.346' ends teleporting on edge 'E1', time=2405.00.
-Warning: Teleporting vehicle 'morning_ramp.347'; waited too long (yield), lane='E2_0', time=2709.00.
-Warning: Vehicle 'morning_ramp.347' ends teleporting on edge 'E1', time=2710.00.
-Warning: Teleporting vehicle 'morning_ramp.348'; waited too long (yield), lane='E2_0', time=3014.00.
-Warning: Vehicle 'morning_ramp.348' ends teleporting on edge 'E1', time=3017.00.
-Warning: Teleporting vehicle 'morning_ramp.349'; waited too long (yield), lane='E2_0', time=3319.00.
-Warning: Vehicle 'morning_ramp.349' ends teleporting on edge 'E1', time=3319.00.
-Warning: Vehicle 'midday_ramp.152' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4582.00.
-Warning: Vehicle 'midday_ramp.189' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4731.00.
-Warning: Vehicle 'evening_trucks_highway.97' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=3.00, severity=1.00, time=4774.00.
-Warning: Vehicle 'evening_trucks_highway.98' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=4790.00.
-Warning: Vehicle 'evening_trucks_highway.102' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=4836.00.
-Warning: Vehicle 'midday_ramp.246' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4875.00.
-Warning: Vehicle 'evening_trucks_highway.108' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=3.00, severity=1.00, time=4908.00.
-Warning: Teleporting vehicle 'evening_trucks_highway.108'; collision with vehicle 'midday_ramp.258', lane='E1_2', gap=-2.11, time=4908.00, stage=move.
-Warning: Vehicle 'evening_trucks_highway.108' teleports beyond arrival edge 'E1', time=4908.00.
-Warning: Vehicle 'midday_ramp.264' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4921.00.
-Warning: Teleporting vehicle 'midday_ramp.264'; collision with vehicle 'evening_trucks_highway.109', lane='E1_2', gap=-0.10, time=4921.00, stage=move.
-Warning: Vehicle 'midday_ramp.264' teleports beyond arrival edge 'E1', time=4921.00.
-Warning: Teleporting vehicle 'evening_trucks_highway.110'; collision with vehicle 'midday_ramp.269', lane='E1_2', gap=-7.30, time=4931.00, stage=move.
-Warning: Vehicle 'evening_trucks_highway.110' teleports beyond arrival edge 'E1', time=4931.00.
-Warning: Vehicle 'midday_ramp.275' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4944.00.
-Warning: Teleporting vehicle 'evening_trucks_highway.113'; collision with vehicle 'midday_ramp.284', lane='E1_2', gap=-7.38, time=4967.00, stage=move.
-Warning: Vehicle 'evening_trucks_highway.113' teleports beyond arrival edge 'E1', time=4967.00.
-Warning: Vehicle 'midday_ramp.291' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=4982.00.
-Warning: Vehicle 'midday_ramp.301' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=5006.00.
-Warning: Vehicle 'midday_ramp.306' performs emergency braking on lane 'E2_0' with decel=9.00, wished=4.50, severity=1.00, time=5018.00.
-Warning: Teleporting vehicle 'evening_trucks_highway.120'; collision with vehicle 'midday_ramp.318', lane='E1_2', gap=-10.58, time=5050.00, stage=move.
-Warning: Vehicle 'evening_trucks_highway.120' teleports beyond arrival edge 'E1', time=5050.00.
-Warning: Vehicle 'evening_trucks_highway.125' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=3.00, severity=1.00, time=5112.00.
-Warning: Vehicle 'midday_ramp.362' performs emergency braking on lane ':J1_3_0' with decel=9.00, wished=4.50, severity=1.00, time=5159.00.
-Warning: Vehicle 'midday_ramp.381' performs emergency braking on lane 'E2_0' with decel=9.00, wished=4.50, severity=1.00, time=5209.00.
-Warning: Vehicle 'midday_ramp.391' performs emergency braking on lane 'E2_0' with decel=9.00, wished=4.50, severity=1.00, time=5234.00.
-Warning: Vehicle 'evening_trucks_highway.136' performs emergency braking on lane ':J1_0_2' with decel=9.00, wished=3.00, severity=1.00, time=5245.00.
-Warning: Vehicle 'evening_trucks_highway.137' performs emergency braking on lane 'E0_2' with decel=9.00, wished=3.00, severity=1.00, time=5258.00.
-Simulation ended at time: 5406.00.
-Reason: TraCI requested termination.
+Warning: Vehicle 'morning_cars_highway.51' performs emergency braking on lane 'E0_2' with decel=9.00, wished=4.50, severity=1.00, time=98.00.
+Simulation ended at time: 131.00.
 Performance:
- Duration: 38.94s
- TraCI-Duration: 30.51s
- Real time factor: 138.829
- UPS: 2847.354905
+ Duration: 1.18s
+ TraCI-Duration: 0.66s
+ Real time factor: 110.923
+ UPS: 1592.718036
 Vehicles:
- Inserted: 5443
- Running: 0
- Waiting: 0
- Teleports: 10 (Collisions: 5, Yield: 5)
- Emergency Braking: 19
-DijkstraRouter answered 8998 queries and explored 2.00 edges on average.
-DijkstraRouter spent 0.03s answering queries (0.00ms on average).
+ Inserted: 111 (Loaded: 114)
+ Running: 17
+ Waiting: 3
+ Emergency Braking: 1
+DijkstraRouter answered 114 queries and explored 2.00 edges on average.
+DijkstraRouter spent 0.00s answering queries (0.00ms on average).
