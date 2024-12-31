@@ -118,52 +118,27 @@ class QLearningTrafficControl:
         traci.close()
         self.epsilon = max(self.min_epsilon, self.epsilon * self.epsilon_decay)
         return total_reward
-
+   
     def convergance(self, previous_Q, threshold):
+        """
+        Checks if the Q-table has converged by comparing the maximum absolute difference
+        between the current and previous Q-tables against a given threshold.
+
+        Args:
+            previous_Q (np.array): The Q-table from the previous iteration.
+            threshold (float): The convergence threshold for Q-value changes.
+
+        Returns:
+            bool: True if the Q-values have converged, False otherwise.
+        """
         delta = np.abs(self.Q - previous_Q).max()
         print(f"Convergence Check: Max Q-value change = {delta}")
         return delta < threshold
 
-    def test_without_traffic_lights(self):
-        """Test the performance without traffic light control."""
-        traci.start([
-            "sumo-gui",
-            "-c",
-            "../Simulation-withOut-Trafic-Light/sumo.sumocfg",
-            "--start",
-            "true",
-            "--xml-validation",
-            "never",
-            "--log",
-            "log",
-            "--quit-on-end"
-        ])
 
-        print("Testing without traffic lights...")
-        for _ in range(10):
-            traci.simulation.step()
 
-        state = self.get_state()
-        total_reward = 0
-        ramp_metering_time = 0
-        done = False
-        while not done:
-            traci.simulation.step()
-            ramp_metering_time += 1
-            density_autoroute = sum(traci.lane.getLastStepVehicleNumber(f"E0_{i}") for i in range(3))
-            queue_bretelle = traci.lane.getLastStepVehicleNumber("E2_0")
-            reward = self.get_reward(density_autoroute, queue_bretelle, ramp_metering_time)
-            total_reward += reward
-
-            next_state = self.get_state()
-            state = next_state
-            done = (traci.simulation.getMinExpectedNumber() == 0)
-
-        traci.close()
-        return total_reward, ramp_metering_time
-
-    def test_with_traffic_lights(self):
-        """Test the performance with traffic light control."""
+    def test_performance(self):
+        """Tests the learned policy and evaluates performance."""
         traci.start([
             "sumo-gui",
             "-c",
@@ -177,7 +152,8 @@ class QLearningTrafficControl:
             "--quit-on-end"
         ])
 
-        print("Testing with traffic lights...")
+        print("Testing the policy...")
+
         for _ in range(10):
             traci.simulation.step()
 
@@ -185,10 +161,13 @@ class QLearningTrafficControl:
         total_reward = 0
         ramp_metering_time = 0
         done = False
+
         while not done:
             action = self.choose_action(state, evaluate=True)
+
             signal_states = ["GGGr", "GGGy", "GGGG"]
             traci.trafficlight.setRedYellowGreenState("feux", signal_states[action])
+
             traci.simulation.step()
             ramp_metering_time += 1
             density_autoroute = sum(traci.lane.getLastStepVehicleNumber(f"E0_{i}") for i in range(3))
@@ -201,48 +180,34 @@ class QLearningTrafficControl:
             done = (traci.simulation.getMinExpectedNumber() == 0)
 
         traci.close()
+        print(f"Final performance: Total reward = {total_reward}, Total ramp metering time = {ramp_metering_time}")
         return total_reward, ramp_metering_time
 
+# Simulation and Analysis
 if __name__ == '__main__':
     QL_traffic_control = QLearningTrafficControl()
+    num_epochs = 4
+    rewards = []
 
-    total_rewards_without = []
-    ramp_metering_times_without = []
-    total_rewards_with = []
-    ramp_metering_times_with = []
+    previous_Q = np.copy(QL_traffic_control.Q)
+    threshold = 1e-3  # Convergence threshold
 
-    for epoch in range(50):  # Run for multiple epochs to get more data
-        QL_traffic_control.train(epoch)
+    for epoch in range(num_epochs):
+        total_reward = QL_traffic_control.train(epoch)
+        rewards.append(total_reward)
 
-        total_reward_without, ramp_metering_time_without = QL_traffic_control.test_without_traffic_lights()
-        total_rewards_without.append(total_reward_without)
-        ramp_metering_times_without.append(ramp_metering_time_without)
+        if QL_traffic_control.convergance(previous_Q, threshold):
+            print("Converged!")
+            break
+        previous_Q = np.copy(QL_traffic_control.Q)
 
-        total_reward_with, ramp_metering_time_with = QL_traffic_control.test_with_traffic_lights()
-        total_rewards_with.append(total_reward_with)
-        ramp_metering_times_with.append(ramp_metering_time_with)
-
-    # Visualization
-    epochs = list(range(2))
-    plt.figure(figsize=(14, 7))
-
-    # Total Reward Comparison
-    plt.subplot(1, 2, 1)
-    plt.plot(epochs, total_rewards_without, label='Without Traffic Lights', color='red')
-    plt.plot(epochs, total_rewards_with, label='With Traffic Lights', color='blue')
-    plt.xlabel('Epoch')
-    plt.ylabel('Total Reward')
-    plt.title('Total Reward Comparison')
-    plt.legend()
-
-    # Ramp Metering Time Comparison
-    plt.subplot(1, 2, 2)
-    plt.plot(epochs, ramp_metering_times_without, label='Without Traffic Lights', color='red')
-    plt.plot(epochs, ramp_metering_times_with, label='With Traffic Lights', color='blue')
-    plt.xlabel('Epoch')
-    plt.ylabel('Ramp Metering Time')
-    plt.title('Ramp Metering Time Comparison')
-    plt.legend()
-
-    plt.tight_layout()
+    # Plot Rewards
+    plt.plot(rewards)
+    plt.xlabel("Epoch")
+    plt.ylabel("Total Reward")
+    plt.title("Reward Trend Over Time")
     plt.show()
+
+    # Test Policy
+    print("Testing learned policy...")
+    QL_traffic_control.test_performance()

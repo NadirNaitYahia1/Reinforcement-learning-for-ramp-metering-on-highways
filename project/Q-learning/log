@@ -1,0 +1,17 @@
+***Starting server on port 56618 ***
+Loading net-file from '../Simulation-withOut-Trafic-Light/sumo.net.xml' ... done (9ms).
+Loading additional-files from '../Simulation-withOut-Trafic-Light/sumo.add.xml' ... done (2ms).
+Loading done.
+Simulation started with time: 0.00.
+Simulation ended at time: 370.00.
+Performance:
+ Duration: 2.16s
+ TraCI-Duration: 1.54s
+ Real time factor: 171.296
+ UPS: 2185.648148
+Vehicles:
+ Inserted: 256 (Loaded: 320)
+ Running: 13
+ Waiting: 64
+DijkstraRouter answered 293 queries and explored 2.00 edges on average.
+DijkstraRouter spent 0.00s answering queries (0.00ms on average).
